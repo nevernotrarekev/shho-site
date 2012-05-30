@@ -1,0 +1,1398 @@
+/******************************************************************
+Theme Name: Bones (Responsive Edition)
+Theme URI: http://www.themble.com/bones
+Description: This site was built using the Bones Development Theme (Responsive Edition). For more information about Bones or to view documentation, you can visit the <a href="http://themble.com/docs/" title="Bones Documentation">Bones Documentation</a> page. You can also view the conversation on Twitter by following the hashtag: <a href="http://twitter.com/#!/search/%23wpbones">#wpbones</a>.
+Author: Eddie Machado
+Author URI: http://www.themble.com/bones/
+Version: 1.01
+Tags: html5, css3, development, responsive, media queries, mobile, h5bp
+
+License: GPL or whatever
+License URI: http://www.gnu.org/copyleft/gpl.html
+
+Media Queries Developed by: Andy Clarke & the 320 & Up Extension
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+
+Check out this plugin by Robert Rourke wich makes setting up
+a select input on mobile as your navigation a breeze:
+http://wordpress.org/extend/plugins/dropdown-menus/
+
+THIS FILE IS FOR RESPONSIVE DESIGNS & REPLACES THE STYLE.CSS FILE
+IN THE THEME ROOT. THIS IS PRETTY EXPIRIMENTAL SO BE WARNED.
+
+All Default Styles are in library/css/normalize.css
+I reccommend not editing those files and making all
+changes here. That way if something goes awry, you
+can easily revert back to the original, but that's
+totally up to you. Happy Developing!
+
+******************************************************************/
+
+/******************************************************************
+Bones Normalize Stylesheet
+
+Designed by Eddie Machado
+http://themble.com/bones
+eddie@themble.com
+
+Special Thanks to:
+Paul Irish, Divya Manian & the HTML5 Boilerplate
+@necolas for normalize.css and other inspirations
+Andy Clarke & the 320 & Up Extension
+Yoast for some WP functions & optimization ideas
+Andrew Rogers for code optimization
+David Dellanave for speed & code optimization
+and several other developers. :)
+
+I ADVISE AGAINST EDITING THIS FILES.
+******************************************************************/
+
+/******************************************************************
+GENERAL NORMALIZE
+******************************************************************/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]), [hidden] { display: none; }
+
+/** Base Styles **/
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.5; }
+body, button, input, select, textarea { font-family: sans-serif; color: #333; }
+
+/** IE Fixes **/
+img { border: 0; -ms-interpolation-mode: bicubic; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+/** Links **/
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+/** Typography **/
+h1 { font-size: 2em; } /* fixes html5 bug */
+p { -webkit-hyphens: auto; -moz-hyphens: auto; -epub-hyphens: auto; hyphens: auto; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong, .strong { font-weight: bold; }
+dfn, em, .em { font-style: italic; }
+small, .small, sub, sup { font-size: 75%; }
+ins, .ins { background: #ff9; color: #000; text-decoration: none; }
+mark, .mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+blockquote { margin: 1.5em 40px; }
+q { quotes: none; }
+q:before, q:after { content: ''; content: none; }
+ul, ol { margin: 1.5em 0; padding: 0; }
+dd { margin: 0; }
+nav ul, nav ol, .widget ol, .widget ul, .commentlist { list-style: none; list-style-image: none; margin: 0; }
+
+/* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+sub, sup { line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/** Forms **/
+form, fieldset, form ul, form ol, fieldset ol, fieldset ul { margin: 0; border: 0; }
+legend { border: 0; *margin-left: -7px; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+
+/* Colors for form validity */
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+/** Tables **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */ 
+.clearfix:before, .clearfix:after, nav[role=navigation] .menu ul:before, nav[role=navigation] .menu ul:after { content: ""; display: table; }
+.clearfix:after, nav[role=navigation] .menu ul:after { clear: both; }
+.clearfix, nav[role=navigation] .menu ul { zoom: 1; }
+
+/* wordpress junk */
+.wp-smiley { margin: 0 !important; max-height: 1em; }
+
+				
+/******************************************************************
+PRINT STYLESHEET
+******************************************************************/
+@media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } a, a:visited { color: #444 !important; text-decoration: underline; } a[href]:after { content: " (" attr(href) ")"; } abbr[title]:after { content: " (" attr(title) ")"; } .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } pre, blockquote { border: 1px solid #999; page-break-inside: avoid; } thead { display: table-header-group; } tr, img { page-break-inside: avoid; } img { max-width: 100% !important; }
+    @page { margin: 0.5cm; } p, h2, h3 { orphans: 3; widows: 3; } h2, h3{ page-break-after: avoid; }
+}
+
+/******************************************************************
+COMMON & REUSABLE STYLES
+******************************************************************/
+
+/* text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* highlighting search term on search page */
+mark, .search-term { background: #EBE16F; }
+
+/* alerts & notices */
+.help, .info, .error, .success { margin: 10px; padding: 5px 18px; border: 1px solid #cecece; }
+.help { border-color: #E0C618; background: #EBE16F; }
+.info { border-color: #92cae4; background: #d5edf8; }
+.error { border-color: #fbc2c4; background: #fbe3e4; }
+.success { border-color: #c6d880; background: #e6efc2; } 
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the 
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+
+/******************************************************************
+BASE MOBILE STYLES
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible.
+******************************************************************/
+
+body {
+	font-family: Georgia, serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #565656;
+}
+
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+
+.rtl {}
+.home {} /* home page */
+.blog {} 
+.archive {} /* archive page */
+.date {} /* date archive page */
+	.date-paged-1 {} /* replace the number to the corresponding page number */
+.search {} /* search page */
+	.search-results {} /* search result page */
+	.search-no-results {} /* no results search page */
+	.search-paged-1 {} /* individual paged search (i.e. body.search-paged-3) */
+.error404 {} /* 404 page */
+.single {} /* single post page */
+	.postid-1 {} /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {} /* individual paged single (i.e. body.single-paged-3) */
+.attachment {} /* attatchment page */
+	.attachmentid-1 {} /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {} /* style mime type pages */
+.author {} /* author page */
+	.author-nicename {} /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {} /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {} /* category page */
+	.category-1 {} /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {} /* replace the number to the corresponding page number */
+.tag {} /* tag page */
+	.tag-slug {} /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {} /* replace the number to the corresponding page number */
+.page-template {} /* custom page template page */
+	.page-template-page-php {} /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {} /* replace the number to the corresponding page number */
+	.page-parent {}
+	.page-child {}
+	.parent-pageid-1 {} /* replace the number to the corresponding page number */
+.logged-in {} /* if user is logged in */
+.paged {} /* paged items like search results or archives */
+	.paged-1 {} /* individual paged (i.e. body.paged-3) */
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap { 
+	width: 90%;
+	margin: 0 auto;
+}
+
+/*
+No Grid? Say Whaaaat?
+There's really no need for all that
+extraneous grid css since floating 
+columns wouldn't really fit on such a 
+small screen, so let's only bring it in
+when we're ready for it.
+*/
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited { 
+	color: #f01d4f; 
+}
+
+a:hover, a:focus { 
+	color: #f05e81; 
+}
+
+a:active {} /* on click */
+a:link { 
+	-webkit-tap-highlight-color : rgba(0,0,0,0); 
+	/* 
+	this highlights links on iPhones/iPads. 
+	so it basically works like the :hover selector
+	for mobile devices.
+	*/ 
+}
+
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { 
+	font-family: sans-serif; 
+	font-weight: 500; 
+	/* 
+	if you're going to use webfonts, be sure to check your weights 
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+}
+
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a { 
+	text-decoration: none; 
+}
+
+h1, .h1 { 
+	font-size: 2.5em; 
+	line-height: 1.333em; 
+}
+
+h2, .h2 { 
+	font-size: 1.75em; 
+	line-height: 1.4em; 
+	margin-bottom: 0.375em; 
+}
+
+h3, .h3 { 
+	font-size: 1.125em; 
+}
+
+h4, .h4 { 
+	font-size: 1.1em; 
+	font-weight: 700; 
+}
+
+h5, .h5 { 
+	font-size: 0.846em; 
+	line-height: 2.09em; 
+	text-transform: uppercase; 
+	letter-spacing: 2px; 
+}
+
+
+/*********************
+HEADER SYTLES
+*********************/
+
+.header {}
+
+	#logo {}
+	
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav {}
+
+	.menu {
+		margin: 1.1em 0; 
+	}
+	
+	/* .menu is clearfixed inside mixins.less */
+	
+		.menu ul {}
+			.menu li {}
+				.menu li a {
+					display: block;
+					text-decoration: none;
+					padding: 10px 10px;
+					background-color: #eee;
+					border-bottom: 1px solid #ccc; 
+				}
+					
+					/*
+					remember this is for mobile ONLY, so there's no need
+					to even declare hover styles here, you can do it in
+					the style.less file where it's relevant. We want to 
+					keep this file as small as possible!
+					*/
+					.menu li a:hover {}
+				
+					.menu li:first-child a {}
+					.menu li:last-child a {}
+					
+					/* highlight current page */
+					.menu li.current-menu-item a, 
+					.menu li.current_page_item a,
+					.menu li.current-page-ancestor a {}
+					
+					/*
+					so you really have to rethink your dropdowns for mobile.
+					you don't want to have it expand too much because the
+					screen is so small. How you manage your menu should
+					depend on the project. Here's some great info on it:
+					http://www.alistapart.com/articles/organizing-mobile/
+					*/
+					.menu .sub-menu, .menu .children {}
+						.menu ul ul li a {
+							padding-left: 30px;
+						}
+						
+						 /* highlight sub-menu current page */
+						 .menu .sub-menu li.current-menu-item a, 
+						 .menu .sub-menu li.current_page_item a,
+						 .menu .sub-menu li.current-page-ancestor a {}
+						
+							.menu ul ul li a:hover {}
+							.menu ul ul li:last-child a {}
+							
+							/* 
+							menus should definitely not go down this
+							deep on a mobile device. that would just be
+							a mess.
+							*/
+							.menu ul ul ul { }
+								.menu ul li:hover ul ul { }
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content { 
+	margin-top: 2.2em; 
+}
+	
+		.hentry {}
+		
+		.single-title, .page-title {}
+		.single-title {}
+		.page-title {}
+		.archive_title { }
+	
+		/* want to style individual post classes? Booya! */
+		.post-id {} /* post by id (i.e. post-3) */
+		.post {} /* general post style */
+		.page {} /* general article on a page style */
+		.attachment {} /* general style on an attatchment */
+		.sticky {} /* sticky post style */
+		.hentry {} /* hentry class */
+		.category-slug {} /* style by category (i.e. category-videos) */
+		.tag-slug {} /* style by tag (i.e. tag-news) */
+	
+		/* post meta */
+		.meta {
+			color: #999;
+		}
+			.meta time {}
+			
+		/* post content */
+		.post-content {}
+			
+			.post-content p {}
+			.post-content ul, .post-content ol, .post-content table, .post-content dl {}
+			.post-content ul, .post-content ol {}
+			.post-content li {}
+			.post-content ul li {}
+			.post-content ol li {}
+			
+			.post-content blockquote {}
+			.post-content blockquote:before {} /* this adds the quote before the blockquote */
+			
+			.post-content dl {}
+			.post-content dt {}
+			.post-content dd {
+				margin-left: 0;
+				font-size: 0.9em;
+				color: #787878;
+				margin-bottom: 1.5em;
+			}
+			
+			.post-content img { 
+				margin: 0 0 1.5em 0; 
+				max-width: 100%; 
+			}
+			
+			/*
+			image alignment on a screen this size may be
+			a bit difficult. It's set to start aligning 
+			and floating images at the next breakpoint,
+			but it's up to you. Feel free to change it up.
+			*/
+			.alignleft, img.alignleft {}
+			.alignright, img.alignright {}
+			.aligncenter, img.aligncenter {}
+			
+			.post-content video, .post-content object { 
+				max-width: 100%; 
+			}
+			.post-content pre, .post-content code {
+				background: #eee;
+				border: 1px solid #cecece;
+				padding: 10px;
+			}
+			
+			.wp-caption {
+				background: #eee;
+				padding: 5px;
+			}
+			.wp-caption img {
+				margin-bottom: 0;
+				width: 100%;
+			}
+			.wp-caption p.wp-caption-text {
+				font-size: 0.85em;
+				margin: 4px 0 7px;
+				text-align: center;
+			}
+			
+			/* image gallery styles */
+			.gallery dl {}
+			.gallery dt {}
+			.gallery dd {}
+			.gallery dl a {}
+			.gallery dl img {}
+			.gallery-caption {}
+			
+			.size-full {}
+			.size-large {}
+			.size-medium {}
+			.size-thumbnail {}
+			
+		.hentry footer {}	
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.page-navigation, .wp-prev-next { 
+	margin: 1.1em 0 2.2em; 
+}
+	.bones_page_navi, .wp-prev-next ul {}
+	
+		.bones_page_navi li { 
+			float: left; 
+			margin-left: 10px; 
+			} 
+			
+			.bones_page_navi li a { 
+				padding: 3px 6px; 
+				display: block; 
+				text-decoration: none; 
+				position: relative; 
+			}
+				.bones_page_navi li a:hover { 
+					color: #f01d4f; 
+					text-decoration: underline; 
+				}
+		
+		/* current page link */	
+		.bones_page_navi li.bpn-current { 
+			padding: 3px 6px; 
+			border-bottom: 2px solid #f01d4f; 
+			position: relative; 
+		}	
+			/* hovering on current page link */
+			.bones_page_navi li.bpn-current:hover {}
+			
+		/* common styles for page-navi links */
+		.bones_page_navi li.bpn-prev-link a, .bones_page_navi li.bpn-next-link a {
+			padding: 0;
+		}
+		.bones_page_navi li.bpn-prev-link a:hover, .bones_page_navi li.bpn-next-link a:hover, .bones_page_navi li.bpn-first-page-link a:hover, .bones_page_navi li.bpn-last-page-link a:hover {
+			background: none;
+		} 
+		
+		/* previous link */
+		.bones_page_navi li.bpn-prev-link { } 
+			.bones_page_navi li.bpn-prev-link a {}
+				.bones_page_navi li.bpn-prev-link a:hover {}
+		
+		/* next page link */		
+		.bones_page_navi li.bpn-next-link { font-weight: 700; } 
+			.bones_page_navi li.bpn-next-link a {}
+				.bones_page_navi li.bpn-next-link a:hover {}
+				
+		/* first page link */
+		.bones_page_navi li.bpn-first-page-link {} 
+			.bones_page_navi li.bpn-first-page-link a {}
+				.bones_page_navi li.bpn-first-page-link a:hover {}
+		
+		/* last page link */
+		.bones_page_navi li.bpn-last-page-link {} 
+			.bones_page_navi li.bpn-last-page-link a {}
+				.bones_page_navi li.bpn-last-page-link a:hover {}
+	
+	/* fallback previous & next links */
+	.wp-prev-next {}
+		.wp-prev-next ul {}
+			.wp-prev-next .prev-link { float: left; }
+			.wp-prev-next .next-link { float: right; }
+			
+			
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+#comments {}/* h3 comment title */
+	#comments span {} /* number of comments span */
+	
+.comment-nav {}
+	.comment-nav ul {}
+		.comment-nav ul li {}
+		
+.commentlist {}
+	.commentlist li { 
+		position: relative; 
+		clear: both; 
+		overflow: hidden;
+		list-style-type: none; 
+		margin-bottom: 1.5em; 
+		padding: 0.7335em 10px; 
+	}
+		.commentlist li[class*=depth-] { 
+			margin-top: 1.1em; 
+		}
+			.commentlist li.depth-1 { 
+				margin-left: 0; 
+				margin-top: 0; 
+			}
+				.commentlist li:not(.depth-1) { 
+					margin-right: -10px; 
+					margin-left: -10px;
+					margin-top: 0; 
+					padding-bottom: 0; 
+				}
+			.commentlist li.depth-2 {}
+			.commentlist li.depth-3 {}
+			.commentlist li.depth-4 {}
+			.commentlist li.depth-5 {}
+			.commentlist li:last-child { 
+				margin-bottom: 0; 
+			}
+				.commentlist li ul.children li {}
+				.commentlist li ul.children li.alt {}
+				.commentlist li ul.children li.byuser {}
+				.commentlist li ul.children li.comment {}
+				.commentlist li ul.children li.depth-1 {} /* change number for different depth */
+				.commentlist li ul.children li.bypostauthor {}
+				.commentlist li ul.children li.comment-author-admin {}
+				.commentlist li ul.children .alt {}
+				.commentlist li ul.children .odd {}
+				.commentlist li ul.children .even {}
+			.commentlist .alt {}
+			.commentlist .odd { 
+				background: #eee; 
+			}
+			.commentlist .even { 
+				background: #fefefe; 
+			}
+			.commentlist .parent {}
+			.commentlist .comment {}
+			.commentlist .children { 
+			}
+			.commentlist .pingback {}
+			.commentlist .bypostauthor {}
+			.commentlist .comment-author {}
+			.commentlist .comment-author-admin {}
+			.commentlist .thread-alt {}
+			.commentlist .thread-odd {}
+			.commentlist .thread-even {}	
+			
+			.commentlist .vcard { 
+				margin-left: 50px; 
+			}
+				.commentlist .vcard cite.fn { 
+					font-weight: 700; 
+					font-style: normal; 
+				}
+				.commentlist .vcard time { 
+					float: right; 
+				}
+					.commentlist .vcard time a { 
+						color: #999; 
+						text-decoration: none; 
+					}
+						.commentlist .vcard time a:hover { 
+							text-decoration: underline; 
+						}
+				.commentlist .vcard img.photo {}
+				.commentlist .vcard img.avatar { 
+					position: absolute; 
+					left: 10px; 
+					padding: 2px; 
+					border: 1px solid #cecece; 
+					background: #fff; 
+				}
+					.commentlist .vcard cite.fn a.url {}
+				.commentlist .comment-meta {} 
+					.commentlist .comment-meta a {}
+				.commentlist .commentmetadata {}
+					.commentlist .commentmetadata a {}
+			.commentlist li .comment_content { 
+				margin-left: 50px; 
+			}
+				.commentlist li .comment_content p { 
+					margin: 0.7335em 0 1.5em; 
+					font-size: 1em; 
+					line-height: 1.5em; 
+				}
+				.commentlist li ul { 
+					margin: 0; 
+				}		
+				.commentlist .comment-reply-link { 
+					text-decoration: none; 
+					float: right;  
+					background: #4598bb; 
+					padding: 3px 5px; 
+					color: #fff; 
+					opacity: 0.65; 
+					margin-bottom: 10px; 
+					font-weight: 700; 
+					font-size: 0.9em; 
+				}
+					.commentlist a.comment-reply-link:hover { 
+						opacity: 1; 
+					}
+					
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.respond-form { 
+	margin: 1.5em 10px; 
+	padding-bottom: 2.2em; 
+}
+	#comment-form-title { 
+		margin: 0 0 1.1em; 
+	}
+	
+	#cancel-comment-reply {}
+			#cancel-comment-reply a {}
+			
+	.respond-form form[method=post] { 
+		margin: 0.75em 0; 
+	}
+		
+		.comments-logged-in-as {}
+		
+		.respond-form form[method=post] li { 
+			list-style-type: none; 
+			clear: both; 
+			margin-bottom: 0.7335em; 
+		}
+			.respond-form form[method=post] li label, .respond-form form[method=post] li small { 
+				display: none; 
+			}
+			.respond-form input[type=text], .respond-form input[type=email], .respond-form input[type=url], .respond-form textarea { 
+				padding: 3px 6px; 
+				background: #efefef; 
+				border: 2px solid #cecece; 
+				line-height: 1.5em; 
+			}
+			.respond-form input[type=text]:focus, .respond-form input[type=email]:focus, .respond-form input[type=url]:focus, .respond-form textarea:focus { 
+				background: #fff; 
+			}
+			.respond-form input[type=text], .respond-form input[type=email], .respond-form input[type=url] { 
+				max-width: 400px; 
+				min-width: 250px; 
+			}
+			
+			#allowed_tags { 
+				margin: 1.5em 10px 0.7335em 0; 
+			}
+			.respond-form textarea { 
+				resize: none; 
+				width: 97.3%; 
+				height: 150px; 
+			}
+			#submit {}
+		
+	/* form validation */
+	.respond-form input:invalid, .respond-form textarea:invalid { 
+		outline: none; 
+		border-color: #fbc2c4; 
+		background-color: #f6e7eb;
+		-webkit-box-shadow: none; 
+		   -moz-box-shadow: none;  
+		    -ms-box-shadow: none;
+				box-shadow: none;  
+	}		
+	
+	/* no comments */
+	.nocomments { 
+		margin: 0 20px 1.1em; 
+	}				
+			
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+	.widget {}
+	
+		.widgettitle {}
+		
+		.widget ul {}
+	
+		.widget li {}
+		
+			.widget li:first-child {}
+			.widget li:last-child {}
+		
+			.widget li a {}
+			
+			.widget li ul {}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+}
+	
+	/*
+	if you checked out the link above:
+	http://www.alistapart.com/articles/organizing-mobile/
+	you'll want to style the footer nav
+	a bit more in-depth. Remember to keep
+	it simple because you'll have to 
+	override these styles for the desktop
+	view.
+	*/
+	.footer-links {}
+		.footer-links ul {}
+			.footer-links li {}
+				.footer-links li a {}
+					
+					/* remember, no hover in mobile */
+					.footer-links li a:hover {} 
+				
+				/* highlight current page */	
+				.nav li.current-menu-item a, .nav li.current_page_item a {}
+				
+				/* be careful with the depth of your menus */
+				.footer-links .sub-menu {}
+			
+	.attribution {}
+
+
+/******************************************************************
+iPAD & TABLET STYLES 
+These is your iPad styles. They will be visible to anyone who 
+resizes their browser from the smallest size to the next break
+point.
+******************************************************************/
+@media only screen and (min-width: 480px) {
+
+	/* insert override styles here */
+
+} /* end of media query */
+
+/******************************************************************
+DESKTOP & JUST BIGGER THAN AN iPAD
+This is your standard iPad size or average tablet size. It's also
+a decent size for desktop users.
+******************************************************************/
+@media only screen and (min-width: 768px) {
+
+body {}
+
+/******************************************************************
+WORDPRESS BODY CLASSES
+want to style a page via body class? go ahead
+******************************************************************/
+
+.rtl {}
+.home {} /* home page */
+.blog {} 
+.archive {} /* archive page */
+.date {} /* date archive page */
+	.date-paged-1 {} /* replace the number to the corresponding page number */
+.search {} /* search page */
+	.search-results {} /* search result page */
+	.search-no-results {} /* no results search page */
+	.search-paged-1 {} /* individual paged search (i.e. body.search-paged-3) */
+.error404 {} /* 404 page */
+.single {} /* single post page */
+	.postid-1 {} /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {} /* individual paged single (i.e. body.single-paged-3) */
+.attachment {} /* attatchment page */
+	.attachmentid-1 {} /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {} /* style mime type pages */
+.author {} /* author page */
+	.author-nicename {} /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {} /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {} /* category page */
+	.category-1 {} /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {} /* replace the number to the corresponding page number */
+.tag {} /* tag page */
+	.tag-slug {} /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {} /* replace the number to the corresponding page number */
+.page-template {} /* custom page template page */
+	.page-template-page-php {} /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {} /* replace the number to the corresponding page number */
+	.page-parent {}
+	.page-child {}
+	.parent-pageid-1 {} /* replace the number to the corresponding page number */
+.logged-in {} /* if user is logged in */
+.paged {} /* paged items like search results or archives */
+	.paged-1 {} /* individual paged (i.e. body.paged-3) */
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	max-width: 960px;
+}
+	/***** Grid Options down here, where they are usable ******/
+	/* layout options ( all have margins right & left of 1%) */
+	.col60  { width: 6.3829787%; } /* width 60px  / grid_1  */
+	.col140 { width: 14.893617%; } /* width 140px / grid_2  */
+	.col220 { width: 23.404255%; } /* width 220px / grid_3  */
+	.col300 { width: 31.914894%; } /* width 300px / grid_4  */
+	.col380 { width: 40.425532%; } /* width 380px / grid_5  */
+	.col480 { width: 48.936170%; } /* width 480px / grid_6  */
+	.col540 { width: 57.446809%; } /* width 540px / grid_7  */
+	.col620 { width: 65.957447%; } /* width 620px / grid_8  */
+	.col700 { width: 74.468085%; } /* width 700px / grid_9  */
+	.col780 { width: 82.978723%; } /* width 780px / grid_10 */
+	.col860 { width: 91.489362%; } /* width 860px / grid_11 */
+	.col940 { width: 100.0%;     } /* width 940px / grid_12 */
+	
+	/* layout & column defaults */
+	.col60, .col140, .col220, .col300, .col380, .col480, .col540, .col620, .col700, .col780, .col860, .col940 { 
+		display: inline; 
+		float: left; 
+		position: relative;
+		margin-left: 1.0638298%;   /* 10px */ 
+		margin-right: 1.0638298%;  /* 10px */
+	}
+	
+	/* floats */
+	.left { float: left; }
+	.right { float: right; }
+	
+	/* default styles & fixes */
+	.first { margin-left: 0; } /* fixes alignment */
+	.last { margin-right: 0; } /* fixes alignment */
+
+
+/*********************
+HEADER SYTLES
+*********************/
+
+.header {}
+
+	#logo {}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav {}
+
+	.menu {}
+	
+		.menu ul {
+			background: #eee; 
+		}
+		
+			.menu li {
+				float: left;
+				position: relative;
+			}
+				.menu li a {
+					border-bottom: 0;
+				}
+					.menu li a:hover {
+						background-color: #dedede;
+					}
+				
+					.menu li:first-child a {}
+					.menu li:last-child a {}
+					
+					/* highlight current page */
+					.menu li.current-menu-item a, 
+					.menu li.current_page_item a,
+					.menu li.current-page-ancestor a {}
+					
+					/*
+					plan your menus and drop-downs wisely.
+					*/
+					.menu ul li ul {
+						width: 200px;
+						border: 1px solid #ccc;
+						border-top: 0;
+						position: absolute;
+						display: none;
+						z-index: 8999;
+					}
+					
+						/* show the dropdowns on hover */
+						.menu ul li:hover ul {
+							top: auto;
+							display: block;
+						}
+						
+						.menu ul ul li a {
+							padding-left: 10px;
+							border-right: 0;
+							display: block;
+							width: 180px;
+							border-bottom: 1px solid #ccc;
+						}
+							.menu ul li a:hover {}
+							.menu ul ul li:first-child a {}
+							.menu ul li:last-child a {
+								border-bottom: 0;
+							}
+							
+							/* 
+							more levels
+							*/
+							.menu ul ul ul {
+								
+							}
+								.menu ul li:hover ul ul { }
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {}
+	
+		.hentry {}
+		
+		.single-title, .page-title {}
+		.single-title {}
+		.page-title {}
+		.archive_title { }
+	
+		/* want to style individual post classes? Booya! */
+		.post-id {} /* post by id (i.e. post-3) */
+		.post {} /* general post style */
+		.page {} /* general article on a page style */
+		.attachment {} /* general style on an attatchment */
+		.sticky {} /* sticky post style */
+		.hentry {} /* hentry class */
+		.category-slug {} /* style by category (i.e. category-videos) */
+		.tag-slug {} /* style by tag (i.e. tag-news) */
+	
+		/* post meta */
+		.meta {}
+			.meta time {}
+			
+		/* post content */
+		.post-content {}
+			
+			.post-content p {}
+			.post-content ul, .post-content ol, .post-content table, .post-content dl {}
+			.post-content ul, .post-content ol {}
+			.post-content li {}
+			.post-content ul li {}
+			.post-content ol li {}
+			
+			.post-content blockquote {}
+			.post-content blockquote:before {} /* this adds the quote before the blockquote */
+			
+			.post-content dl {}
+			.post-content dt {}
+			.post-content dd {}
+			
+			.post-content img {}
+			
+			/* image alignment */
+			.alignleft, img.alignleft {}
+			.alignright, img.alignright {}
+			.aligncenter, img.aligncenter {}
+			
+			.post-content video, .post-content object {}
+			.post-content pre, .post-content code {}
+			
+			.wp-caption {}
+			.wp-caption img {}
+			.wp-caption p.wp-caption-text {}
+			
+			/* image gallery styles */
+			.gallery dl {}
+			.gallery dt {}
+			.gallery dd {}
+			.gallery dl a {}
+			.gallery dl img {}
+			.gallery-caption {}
+			
+			.size-full {}
+			.size-large {}
+			.size-medium {}
+			.size-thumbnail {}
+			
+		.hentry footer {}	
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.page-navigation, .wp-prev-next {}
+	.bones_page_navi, .wp-prev-next ul {}
+	
+		.bones_page_navi li {} 
+			
+			.bones_page_navi li a {}
+				.bones_page_navi li a:hover {}
+		
+		/* current page link */	
+		.bones_page_navi li.bpn-current {}	
+			/* hovering on current page link */
+			.bones_page_navi li.bpn-current:hover {}
+			
+		/* common styles for page-navi links */
+		.bones_page_navi li.bpn-prev-link a, .bones_page_navi li.bpn-next-link a {}
+		.bones_page_navi li.bpn-prev-link a:hover, .bones_page_navi li.bpn-next-link a:hover, .bones_page_navi li.bpn-first-page-link a:hover, .bones_page_navi li.bpn-last-page-link a:hover {} 
+		
+		/* previous link */
+		.bones_page_navi li.bpn-prev-link {} 
+			.bones_page_navi li.bpn-prev-link a {}
+				.bones_page_navi li.bpn-prev-link a:hover {}
+		
+		/* next page link */		
+		.bones_page_navi li.bpn-next-link {} 
+			.bones_page_navi li.bpn-next-link a {}
+				.bones_page_navi li.bpn-next-link a:hover {}
+				
+		/* first page link */
+		.bones_page_navi li.bpn-first-page-link {} 
+			.bones_page_navi li.bpn-first-page-link a {}
+				.bones_page_navi li.bpn-first-page-link a:hover {}
+		
+		/* last page link */
+		.bones_page_navi li.bpn-last-page-link {} 
+			.bones_page_navi li.bpn-last-page-link a {}
+				.bones_page_navi li.bpn-last-page-link a:hover {}
+	
+	/* fallback previous & next links */
+	.wp-prev-next {}
+		.wp-prev-next ul {}
+			.wp-prev-next .prev-link {}
+			.wp-prev-next .next-link {}
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+#comments {}/* h3 comment title */
+	#comments span {} /* number of comments span */
+	
+.comment-nav {}
+	.comment-nav ul {}
+		.comment-nav ul li {}
+		
+.commentlist {}
+	.commentlist li {}
+		.commentlist li[class*=depth-] { 
+			padding-left: 20px; 
+		}
+			.commentlist li.depth-1 {}
+				.commentlist li:not(.depth-1) {}
+			.commentlist li.depth-2 {}
+			.commentlist li.depth-3 {}
+			.commentlist li.depth-4 {}
+			.commentlist li.depth-5 {}
+			.commentlist li:last-child {}
+				.commentlist li ul.children li {}
+				.commentlist li ul.children li.alt {}
+				.commentlist li ul.children li.byuser {}
+				.commentlist li ul.children li.comment {}
+				.commentlist li ul.children li.depth-1 {} /* change number for different depth */
+				.commentlist li ul.children li.bypostauthor {}
+				.commentlist li ul.children li.comment-author-admin {}
+				.commentlist li ul.children .alt {}
+				.commentlist li ul.children .odd {}
+				.commentlist li ul.children .even {}
+			.commentlist .alt {}
+			.commentlist .odd {}
+			.commentlist .even {}
+			.commentlist .parent {}
+			.commentlist .comment {}
+			.commentlist .children {}
+			.commentlist .pingback {}
+			.commentlist .bypostauthor {}
+			.commentlist .comment-author {}
+			.commentlist .comment-author-admin {}
+			.commentlist .thread-alt {}
+			.commentlist .thread-odd {}
+			.commentlist .thread-even {}	
+			
+			.commentlist .vcard {}
+				.commentlist .vcard cite.fn {}
+				.commentlist .vcard time {}
+					.commentlist .vcard time a {}
+						.commentlist .vcard time a:hover {}
+				.commentlist .vcard img.photo {}
+				.commentlist .vcard img.avatar {}
+					.commentlist .vcard cite.fn a.url {}
+				.commentlist .comment-meta {} 
+					.commentlist .comment-meta a {}
+				.commentlist .commentmetadata {}
+					.commentlist .commentmetadata a {}
+			.commentlist li .comment_content {}
+				.commentlist li .comment_content p { }
+				.commentlist li ul {}		
+				.commentlist .comment-reply-link {}
+					.commentlist a.comment-reply-link:hover {}
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.respond-form {}
+	#comment-form-title {}
+	
+	#cancel-comment-reply {}
+			#cancel-comment-reply a {}
+			
+	.respond-form form[method=post] {}
+		
+		.comments-logged-in-as {}
+		
+		.respond-form form[method=post] li {}
+			.respond-form form[method=post] li label, .respond-form form[method=post] li small {}
+			.respond-form input[type=text], .respond-form input[type=email], .respond-form input[type=url], .respond-form textarea {}
+			.respond-form input[type=text]:focus, .respond-form input[type=email]:focus, .respond-form input[type=url]:focus, .respond-form textarea:focus {}
+			.respond-form input[type=text], .respond-form input[type=email], .respond-form input[type=url] {}
+			
+			#allowed_tags {}
+			.respond-form textarea {}
+			#submit {}
+		
+	/* form validation */
+	.respond-form input:invalid, .respond-form textarea:invalid {}		
+	
+	/* no comments */
+	.nocomments {}			
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	margin-top: 2.2em;
+}
+
+	.widget {
+		padding: 0 10px;
+		margin: 2.2em 0;
+	}
+	
+		.widgettitle {
+			border-bottom: 2px solid #444;
+			margin-bottom: 0.75em;
+		}
+		
+		.widget ul {}
+	
+		.widget li {
+			margin-bottom: 0.75em;
+		}
+		
+			.widget li:first-child {}
+			.widget li:last-child {}
+		
+			.widget li a {}
+			
+			.widget li ul {
+				margin-top: 0.75em;
+				padding-left: 1em;
+			}
+
+	/* links widget */
+	.widget_links {}
+	.widget_links ul {}
+	.widget_links ul li {}
+	.widget_links ul li a {}
+	
+	/* meta widget */
+	.widget_meta {}
+	.widget_meta ul {}
+	.widget_meta ul li {}
+	.widget_meta ul li a {}
+	
+	/* pages widget */
+	.widget_pages {}
+	.widget_pages ul {}
+	.widget_pages ul li {}
+	.widget_pages ul li a {}
+	
+	/* recent-posts widget */
+	.widget_recent_entries {}
+	.widget_recent_entries ul {}
+	.widget_recent_entries ul li {}
+	.widget_recent_entries ul li a {}
+	
+	/* archives widget */
+	.widget_archive {}
+	.widget_archive ul {}
+	.widget_archive ul li {} 
+	.widget_archive ul li a {}
+	.widget_archive select {}
+	.widget_archive option {}
+	
+	/* tag-cloud widget */
+	.widget_links {}
+	.widget_links li:after {}
+	.widget_links li:before {}
+	.widget_tag_cloud {}
+	.widget_tag_cloud a {}
+	.widget_tag_cloud a:after {}
+	.widget_tag_cloud a:before {}
+	
+	/* calendar widget */
+	.widget_calendar {}
+	#calendar_wrap {}
+	#calendar_wrap th {}
+	#calendar_wrap td {}
+	#wp-calendar tr td {}
+	#wp-calendar caption {}
+	#wp-calendar a {}
+	#wp-calendar #today {}
+	#wp-calendar #prev {}
+	#wp-calendar #next {}
+	#wp-calendar #next a {}
+	#wp-calendar #prev a {}
+	
+	/* category widget */
+	.widget_categories {}
+	.widget_categories ul {}
+	.widget_categories ul li {} 
+	.widget_categories ul ul.children {}
+	.widget_categories a {}
+	.widget_categories select{}
+	.widget_categories select#cat {}
+	.widget_categories select.postform {}
+	.widget_categories option {}
+	.widget_categories .level-0 {}
+	.widget_categories .level-1 {}
+	.widget_categories .level-2 {}
+	.widget_categories .level-3 {}
+	
+	/* recent-comments widget */
+	.recentcomments {}
+	#recentcomments {}
+	#recentcomments li {}
+	#recentcomments li a {}
+	.widget_recent_comments {}
+	
+	/* search widget */
+	#searchform {}
+	.widget_search {}
+	.screen-reader-text {}
+	
+	/* text widget */
+	.textwidget {}
+	.widget_text {}
+	.textwidget p {}
+	
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {}
+	
+	/*
+	you'll probably need to do quite a bit
+	of overriding here if you styled them for
+	mobile. Make sure to double check these!
+	*/
+	.footer-links {}
+		.footer-links ul {}
+			.footer-links li {}
+				.footer-links li a {}
+					
+					/* hover styles */
+					.footer-links li a:hover {} 
+				
+				/* highlight current page */	
+				.nav li.current-menu-item a, .nav li.current_page_item a {}
+				
+				/* 
+				be careful with the depth of your menus.
+				it's very rare to have multi-depth menus in
+				the footer.
+				*/
+				.footer-links .sub-menu {}
+			
+	.attribution {}
+
+} /* end of media query */
+
+/******************************************************************
+AVERAGE VIEWING SIZE 
+This is the average viewing window. So Desktops, Laptops, and 
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+******************************************************************/
+@media only screen and (min-width: 992px) {
+
+body {}
+
+.wrap {
+	max-width: 1140px;
+}
+
+
+} /* end of media query */
+
+/******************************************************************
+SUPER LARGE MONITORS STYLES 
+This is for super wide monitors for the l33t people. If you 
+worked in a good base in the previous styles, this should work
+pretty seamlessly.
+******************************************************************/
+@media only screen and (min-width: 1382px) {
+
+body {}
+
+.wrap {
+	max-width: 1240px;
+}
+
+} /* end of media query */
+
+/******************************************************************
+RETINA (iPhone 4 & 5) OR SUPER HIGH RES SCREENS STYLES 
+This is for the high res phones or devices.
+******************************************************************/
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+/* insert styles here */
+
+} /* end of media query */

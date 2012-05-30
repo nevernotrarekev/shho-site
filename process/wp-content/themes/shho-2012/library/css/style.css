@@ -1,0 +1,639 @@
+/* @override http://process.theshho.com/wp-content/themes/shho-2012/library/css/style.css?ver=2011-11-04T15:38 */
+
+/******************************************************************
+Site Name: 2012 SHHO
+Author: The World & Kevin Trinh
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the seperate functions for each media query. The base mobile 
+stylesheet is called in the header, so here we're working up from 
+there. To edit the css, just find the corresponding LESS file.
+******************************************************************/
+/*
+Base.css contains the main mobile styles and is called in the 
+header. This way mobile devices get ONLY the styles that apply
+to them. No muss, no fuss.
+
+normalize.css and the mixins are also called within that base file 
+*/
+
+#background-cover{
+position:absolute;left:0;top:0;width:100%;background:black;color:white;z-index:-1;
+	height: 100%;
+}
+
+section#cover.title-page {
+	margin-top: 0px; display: block; height: 600px; overflow-x: hidden; overflow-y: hidden; z-index: 1000;
+}
+
+article {
+	
+	/*min-height: 800px;*/
+	position:relative;
+	height: auto;
+	margin-bottom: 10px;
+	
+	 -moz-box-shadow: 0 0 6px #666; 
+  -webkit-box-shadow: 0 0 6px #666;
+  
+  	background-color: #fff;
+
+}
+
+#main{
+	margin: 0 auto;
+	width: 880px;
+}
+
+
+
+
+
+*****************************************************************
+AVERAGE VIEWING SIZE 
+This is the average viewing window. So Desktops, Laptops, and 
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*****************************************************************
+@media only screen and (min-width: 481px) {
+  /* styles in 481up.scss */
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: 481px and Up Stylesheet
+  
+  This stylesheet is loaded for larger devices. It's set to 
+  481px because at 480px it would load on a landscaped iPhone.
+  This isn't ideal because then you would be loading all those
+  extra styles on that same mobile connection. 
+  
+  A word of warning. This size COULD be a larger mobile device,
+  so you still want to keep it pretty light and simply expand
+  upon your base.less styles.
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  /*********************
+  HEADER SYTLES
+  *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /* .menu is clearfixed inside mixins.less */
+  .menu {
+    /* end .menu ul */ }
+    .menu ul {
+      /* end .menu ul li */
+      /* highlight current page */
+      /* end current highlighters */ }
+      .menu ul li {
+        /*
+        plan your menus and drop-downs wisely.
+        */ }
+        .menu ul li a {
+          /*
+          you can use hover styles here even though this size
+          has the possibility of bieng a mobile device.
+          */ }
+
+  /* end .menu */
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /* end .hentry */
+  /* want to style individual post classes? Booya! */
+  /* post by id (i.e. post-3) */
+  /* general post style */
+  /* general article on a page style */
+  /* general style on an attatchment */
+  /* sticky post style */
+  /* hentry class */
+  /* style by category (i.e. category-videos) */
+  /* style by tag (i.e. tag-news) */
+  /* post meta */
+  /* post content */
+  .post-content {
+    /* at this larger size, we can start to align images */ }
+    .post-content .alignleft, .post-content img.alignleft {
+      margin-right: 1.5em;
+      display: inline;
+      float: left; }
+    .post-content .alignright, .post-content img.alignright {
+      margin-left: 1.5em;
+      display: inline;
+      float: right; }
+    .post-content .aligncenter, .post-content img.aligncenter {
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      clear: both; }
+
+  /* end .post-content */
+  .wp-caption {
+    /* images inside wp-caption */ }
+
+  /* end .wp-caption */
+  /* image gallery styles */
+  /* end .gallery */
+  /* gallery caption styles */
+  /******************************************************************
+  PAGE NAVI STYLES
+  ******************************************************************/
+  .bones_page_navi {
+    /* current page link */
+    /* end .bones_page_navi .bpn-current */
+    /* common styles for page-navi links */
+    /* remove the bg on end links */
+    /* previous link */
+    /* next page link */
+    /* first page link */
+    /* last page link */ }
+    .bones_page_navi li.bpn-current a {
+      /* hovering on current page link */ }
+
+  /* end .bones_page_navi */
+  /* fallback previous & next links */
+  /* end .wp-prev-next */
+  /******************************************************************
+  COMMENT STYLES
+  ******************************************************************/
+  /* h3 comment title */
+  #comments {
+    /* number of comments span */ }
+
+  .commentlist {
+    /* general comment classes */
+    /* vcard */
+    /* end .commentlist .vcard */
+    /* comment meta */
+    /* comment content */
+    /* end .commentlist .comment_content */
+    /* comment reply link */
+    /* end .commentlist .comment-reply-link */ }
+    .commentlist li {
+      /* end .commentlist li ul.children */ }
+      .commentlist li ul.children {
+        /* variations */
+        /* change number for different depth */ }
+
+  /* end .commentlist */
+  /******************************************************************
+  COMMENT FORM STYLES
+  ******************************************************************/
+  .respond-form form input[type=text],
+  .respond-form form input[type=email],
+  .respond-form form input[type=url],
+  .respond-form form textarea {
+    /* form validation */ }
+
+  /* comment submit button */
+  /* comment form title */
+  /* cancel comment reply link */
+  /* logged in comments */
+  /* allowed tags */
+  /* no comments */
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .widget ul li {
+    /* deep nesting */ }
+
+  /*********************
+  FOOTER STYLES
+  *********************/
+  /*
+  check your menus here. do they look good?
+  do they need tweaking?
+  */
+  /* end .footer-links */ }
+/* end of media query */
+/******************************************************************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and 
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+******************************************************************/
+@media only screen and (min-width: 768px) {
+  /* styles in 768up.scss */
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  Here's where you can start getting into the good stuff.
+  This size will work on iPads, other tablets, and desktops.
+  So you can start working with more styles, background images,
+  and other resources. You'll also notice the grid starts to
+  come into play. Have fun!
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /********************
+  WORDPRESS BODY CLASSES
+  style a page via class
+  ********************/
+  /* home page */
+  /* archive page */
+  /* date archive page */
+  /* replace the number to the corresponding page number */
+  /* search page */
+  /* search result page */
+  /* no results search page */
+  /* individual paged search (i.e. body.search-paged-3) */
+  /* 404 page */
+  /* single post page */
+  /* individual post page by id (i.e. body.postid-73) */
+  /* individual paged single (i.e. body.single-paged-3) */
+  /* attatchment page */
+  /* individual attatchment page (i.e. body.attachmentid-763) */
+  /* style mime type pages */
+  /* author page */
+  /* user nicename (i.e. body.author-samueladams) */
+  /* paged author archives (i.e. body.author-paged-4) for page 4 */
+  /* category page */
+  /* individual category page (i.e. body.category-6) */
+  /* replace the number to the corresponding page number */
+  /* tag page */
+  /* individual tag page (i.e. body.tag-news) */
+  /* replace the number to the corresponding page number */
+  /* custom page template page */
+  /* individual page template (i.e. body.page-template-contact-php */
+  /* replace the number to the corresponding page number */
+  /* replace the number to the corresponding page number */
+  /* if user is logged in */
+  /* paged items like search results or archives */
+  /* individual paged (i.e. body.paged-3) */
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  .wrap {
+    max-width: 960px; }
+
+  /***** Grid Options down here, where they are usable ******/
+  /* This is using the 1140 Grid System: http://cssgrid.net/ */
+  .onecol {
+    width: 4.85%; }
+
+  /* grid_1  */
+  .twocol {
+    width: 13.45%; }
+
+  /* grid_2  */
+  .threecol {
+    width: 22.05%; }
+
+  /* grid_3  */
+  .fourcol {
+    width: 30.75%; }
+
+  /* grid_4  */
+  .fivecol {
+    width: 39.45%; }
+
+  /* grid_5  */
+  .sixcol {
+    width: 48%; }
+
+  /* grid_6  */
+  .sevencol {
+    width: 56.75%; }
+
+  /* grid_7  */
+  .eightcol {
+    width: 65.4%; }
+
+  /* grid_8  */
+  .ninecol {
+    width: 74.05%; }
+
+  /* grid_9  */
+  .tencol {
+    width: 82.7%; }
+
+  /* grid_10 */
+  .elevencol {
+    width: 91.35%; }
+
+  /* grid_11 */
+  .twelvecol {
+    width: 100%; }
+
+  /* grid_12 */
+  /* layout & column defaults */
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
+    float: left;
+    position: relative;
+    margin-right: 3.8%; }
+
+  /* adding float to large column */
+  .twelvecol {
+    float: left;
+    position: relative; }
+
+  /* default styles & fixes */
+  .last {
+    margin-right: 0;
+    float: right; }
+
+  /*********************
+  HEADER SYTLES
+  *********************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+  /* .menu is clearfixed inside mixins.less */
+  .menu {
+    /* end .menu ul */ }
+    .menu ul {
+      background: #eee;
+      /* end .menu ul li */
+      /* highlight current page */
+      /* end current highlighters */ }
+      .menu ul li {
+        float: left;
+        position: relative;
+        /*
+        plan your menus and drop-downs wisely.
+        */
+        /* showing sub-menus */ }
+        .menu ul li a {
+          border-bottom: 0;
+          /*
+          you can use hover styles here even though this size
+          has the possibility of bieng a mobile device.
+          */ }
+          .menu ul li a:hover, .menu ul li a:focus {
+            background-color: #dedede; }
+        .menu ul li ul.sub-menu,
+        .menu ul li ul.children {
+          width: 200px;
+          border: 1px solid #ccc;
+          border-top: 0;
+          position: absolute;
+          display: none;
+          z-index: 8999;
+          /* highlight sub-menu current page */ }
+          .menu ul li ul.sub-menu li,
+          .menu ul li ul.children li {
+            /*
+            if you need to go deeper, go nuts
+            just remember deeper menus suck
+            for usability. k, bai.
+            */ }
+            .menu ul li ul.sub-menu li a,
+            .menu ul li ul.children li a {
+              padding-left: 10px;
+              border-right: 0;
+              display: block;
+              width: 180px;
+              border-bottom: 1px solid #ccc; }
+            .menu ul li ul.sub-menu li:last-child a,
+            .menu ul li ul.children li:last-child a {
+              border-bottom: 0; }
+        .menu ul li:hover ul {
+          top: auto;
+          display: block; }
+
+  /* end .menu */
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /* end .hentry */
+  /* want to style individual post classes? Booya! */
+  /* post by id (i.e. post-3) */
+  /* general post style */
+  /* general article on a page style */
+  /* general style on an attatchment */
+  /* sticky post style */
+  /* hentry class */
+  /* style by category (i.e. category-videos) */
+  /* style by tag (i.e. tag-news) */
+  /* post meta */
+  /* post content */
+  .post-content {
+    /* at this larger size, we can start to align images */ }
+
+  /* end .post-content */
+  .wp-caption {
+    /* images inside wp-caption */ }
+
+  /* end .wp-caption */
+  /* image gallery styles */
+  /* end .gallery */
+  /* gallery caption styles */
+  /******************************************************************
+  PAGE NAVI STYLES
+  ******************************************************************/
+  .bones_page_navi {
+    /* current page link */
+    /* end .bones_page_navi .bpn-current */
+    /* common styles for page-navi links */
+    /* remove the bg on end links */
+    /* previous link */
+    /* next page link */
+    /* first page link */
+    /* last page link */ }
+    .bones_page_navi li.bpn-current a {
+      /* hovering on current page link */ }
+
+  /* end .bones_page_navi */
+  /* fallback previous & next links */
+  /* end .wp-prev-next */
+  /******************************************************************
+  COMMENT STYLES
+  ******************************************************************/
+  /* h3 comment title */
+  #comments {
+    /* number of comments span */ }
+
+  .commentlist {
+    /* general comment classes */
+    /* vcard */
+    /* end .commentlist .vcard */
+    /* comment meta */
+    /* comment content */
+    /* end .commentlist .comment_content */
+    /* comment reply link */
+    /* end .commentlist .comment-reply-link */ }
+    .commentlist li {
+      /* end .commentlist li ul.children */ }
+      .commentlist li ul.children {
+        /* variations */
+        /* change number for different depth */ }
+
+  /* end .commentlist */
+  /******************************************************************
+  COMMENT FORM STYLES
+  ******************************************************************/
+  .respond-form form input[type=text],
+  .respond-form form input[type=email],
+  .respond-form form input[type=url],
+  .respond-form form textarea {
+    /* form validation */ }
+
+  /* comment submit button */
+  /* comment form title */
+  /* cancel comment reply link */
+  /* logged in comments */
+  /* allowed tags */
+  /* no comments */
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .sidebar {
+    margin-top: 2.2em; }
+
+  .widgettitle {
+    border-bottom: 2px solid #444;
+    margin-bottom: 0.75em; }
+
+  .widget {
+    padding: 0 10px;
+    margin: 2.2em 0; }
+    .widget ul li {
+      margin-bottom: 0.75em;
+      /* deep nesting */ }
+      .widget ul li ul {
+        margin-top: 0.75em;
+        padding-left: 1em; }
+
+  /* links widget */
+  /* meta widget */
+  /* pages widget */
+  /* recent-posts widget */
+  /* archives widget */
+  /* tag-cloud widget */
+  /* calendar widget */
+  /* category widget */
+  /* recent-comments widget */
+  /* search widget */
+  /* text widget */
+  /*********************
+  FOOTER STYLES
+  *********************/
+  /*
+  you'll probably need to do quite a bit
+  of overriding here if you styled them for
+  mobile. Make sure to double check these!
+  */
+  .footer-links ul li {
+    /* 
+    be careful with the depth of your menus.
+    it's very rare to have multi-depth menus in
+    the footer.
+    */ }
+
+  /* end .footer-links */ }
+/* end of media query */
+/******************************************************************
+DESKTOP 
+This is the average viewing window. So Desktops, Laptops, and 
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+******************************************************************/
+@media only screen and (min-width: 1030px) {
+  /* styles in 1030up.scss */
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Just larger than iPad
+  
+  This is the desktop size. It's larger than an iPad so it will only
+  be seen on the Desktop. 
+  
+  ******************************************************************/
+  .wrap {
+    max-width: 1140px; } }
+/* end of media query */
+/******************************************************************
+LARGE VIEWING SIZE 
+This is for the larger monitors and possibly full screen viewers.
+******************************************************************/
+@media only screen and (min-width: 1240px) {
+  /* styles in 1240up.scss */
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/ }
+/* end of media query */
+/******************************************************************
+PRINT STYLESHEET
+******************************************************************/
+/******************************************************************
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+******************************************************************/
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+    /* show links on printed pages */
+    /* show title too */ }
+    a:after, a:visited:after {
+      content: " (" attr(href) ")"; }
+    a abbr[title]:after, a:visited abbr[title]:after {
+      content: " (" attr(title) ")"; }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; }
+
+  /* hide content people who print don't need to see */
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none; } }
