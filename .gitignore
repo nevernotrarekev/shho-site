@@ -5,6 +5,8 @@ wp-admin/
 wp-includes/
 wp-content/cache/*
 wp-content/cache/supercache/*
+wp-content/blogs.dir/
+wp-content/uploads/
 sitemap.xml
 sitemap.xml.gz
 readme.html
