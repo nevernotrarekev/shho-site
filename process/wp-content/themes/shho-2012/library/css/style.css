@@ -1,4 +1,7 @@
-/* @override http://process.theshho.com/wp-content/themes/shho-2012/library/css/style.css?ver=2011-11-04T15:38 */
+/* @override 
+	http://process.theshho.com/wp-content/themes/shho-2012/library/css/style.css?ver=2011-11-04T15:38
+	http://localhost/SHHO/web/theshho/shho-site/process/wp-content/themes/shho-2012/library/css/style.css?ver=2011-11-04T15:38
+*/
 
 /******************************************************************
 Site Name: 2012 SHHO
@@ -20,13 +23,24 @@ normalize.css and the mixins are also called within that base file
 */
 
 #background-cover{
-position:absolute;left:0;top:0;width:100%;background:black;color:white;z-index:-1;
+position:absolute;
+left:0;top:0;
+width:100%;
+z-index:-1;
 	height: 100%;
+	}
+
+
+.blackbg{
+		background-image: url(../images/1x1_black.png);
+
 }
 
-section#cover.title-page {
+.cover#title-page {
 	margin-top: 0px; display: block; height: 600px; overflow-x: hidden; overflow-y: hidden; z-index: 1000;
+	
 }
+
 
 article {
 	
@@ -346,17 +360,47 @@ you can add resource intensive styles.
     margin-right: 0;
     float: right; }
 
-  /*********************
+  /*
   HEADER SYTLES
   *********************/
+
+header{
+  width: 1140px;
+  margin: 0 auto;
+  margin-top: 55px;
+  margin-bottom: 25px;
+}
+
+header #logo{
+}
+
+#logo{
+	width: 32px;
+	height: 30px;
+	float: left;
+}
+
+header nav {
+	float: right;
+	margin: 0 20px 0 0;
+}
+  
+.twitter{
+	font-family: "Times Bold Italic";
+	color: #70c8d3;
+	float: left;
+	margin-left: 50px;
+}  
   /*********************
   NAVIGATION STYLES
   *********************/
   /* .menu is clearfixed inside mixins.less */
   .menu {
-    /* end .menu ul */ }
+	float: right;
+	margin-top: 0;
+	margin-bottom: 0;
+}
     .menu ul {
-      background: #eee;
       /* end .menu ul li */
       /* highlight current page */
       /* end current highlighters */ }
@@ -374,7 +418,7 @@ you can add resource intensive styles.
           has the possibility of bieng a mobile device.
           */ }
           .menu ul li a:hover, .menu ul li a:focus {
-            background-color: #dedede; }
+            }
         .menu ul li ul.sub-menu,
         .menu ul li ul.children {
           width: 200px;

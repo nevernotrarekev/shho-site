@@ -40,14 +40,10 @@
 			
 			<header role="banner" class="header">
 			
-				<div id="inner-header" class="wrap clearfix">
+				<div id="inner-header" class="wrap">
 				
-					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-					
-					<!-- if you'd like to use the site description you can un-comment it below -->
-					<?php // bloginfo('description'); ?>
-					
+					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow" title="home"><img src="<?php bloginfo('template_url')?>/library/images/symbol_white.png"></a>
+					<div class="twitter">Tweet tweet</div>
 					<nav role="navigation" class="nav">
 						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
@@ -56,8 +52,9 @@
 			
 			</header> <!-- end header -->
 
-		<section id="cover" class="title-page">
-		
-		        <img id="background-cover" class="spread" src="http://www.laurentnivalle.fr/images/series/NYC/071a.jpg" data-original="images/hoodlums-cropped-web-1440.jpg" alt="The Good Ones - Brian McDaniel" width="1440" height="958" />
-		         
+		<section class="cover" id="title-page">
+
+		        <img id="background-cover" class="spread" src="<?php bloginfo('template_url')?>/library/images/homepage_background_bloody_thursday.jpg" data-original="images/hoodlums-cropped-web-1440.jpg" alt="The Good Ones - Brian McDaniel" width="1440" height="958" />
+		        			</div>      
+
 		</section>
