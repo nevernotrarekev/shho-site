@@ -9,9 +9,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		
 		<title><?php wp_title(''); ?></title>
-		
-		<!-- meta tags should be handled by SEO plugin. I recommend (http://yoast.com/wordpress/seo/) -->
-		
 		<!-- mobile optimized -->
 		<meta name="viewport" content="width=device-width">
 		
@@ -22,12 +19,24 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
+		<script type="text/javascript" src="<?php bloginfo('template_url')?>/library/js/libs/jquery-1.5.1.min.js"></script>	
+
+		<script type="text/javascript" src="<?php bloginfo('template_url')?>/library/js/libs/responsiveslides.min.js"></script>	
 		
-		<!-- load all styles for IE -->
+		<script>
+    $(function () {
+
+      // Slideshow 1
+      $("#featured").responsiveSlides({
+        speed: 5000
+      });
+
+    });
+  </script>
+				<!-- load all styles for IE -->
 		<!--[if (lt IE 9) & (!IEMobile)]>
     		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/ie.css">	
 		<![endif]-->
@@ -54,7 +63,22 @@
 
 		<section class="cover" id="title-page">
 
-		        <img id="background-cover" class="spread" src="<?php bloginfo('template_url')?>/library/images/homepage_background_bloody_thursday.jpg" data-original="images/hoodlums-cropped-web-1440.jpg" alt="The Good Ones - Brian McDaniel" width="1440" height="958" />
-		        			</div>      
+		
+		        <div id="background-cover" class="spread"  > 
+		        <ul id="featured">			
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_berkeley.jpg" /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_fists.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_fritz.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_gas.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_grads.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_library.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_nude.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_rebels.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_revolution.jpg"  /></li>
+					<li><img   src="<?php bloginfo('template_url')?>/library/images/homepage_background_speech.jpg"  /></li>
+				</ul>
+	
+		
+		</div>				 
 
 		</section>
