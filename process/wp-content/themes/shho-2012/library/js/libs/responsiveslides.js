@@ -199,6 +199,36 @@
             restartCycle();
           });
         }
+        
+         // Pause on scroll     
+        
+        var my_div = $("#featured");
+	    var div_top = my_div.offset().top;
+	    
+	     // Pause on hover
+        if (settings.pause) {
+ 		fromTop = $(window).scrollTop();
+	         $(document).scroll(function() {
+          if (div_top < $(window).scrollTop()) {
+            clearInterval(rotate);
+          }
+          else{
+           function () {
+            restartCycle();}
+          };
+        }
+        
+        $(window).scroll(function(){
+		fromTop = $(window).scrollTop();
+		        $(document).scroll(function() {
+            if (div_top < $(window).scrollTop()) {
+			$start.crossSlidePause();
+            }
+            else {
+            $start.crossSlideResume();}
+        });
+
+
 
         // Pager click event handler
         if (settings.pager) {

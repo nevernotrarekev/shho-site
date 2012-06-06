@@ -24,14 +24,14 @@
 		<!-- end of wordpress head -->
 		<script type="text/javascript" src="<?php bloginfo('template_url')?>/library/js/libs/jquery-1.5.1.min.js"></script>	
 
-		<script type="text/javascript" src="<?php bloginfo('template_url')?>/library/js/libs/responsiveslides.min.js"></script>	
+		<script type="text/javascript" src="<?php bloginfo('template_url')?>/library/js/libs/responsiveslides.js"></script>	
 		
 		<script>
     $(function () {
 
       // Slideshow 1
       $("#featured").responsiveSlides({
-        speed: 5000
+        speed: 3200
       });
 
     });
