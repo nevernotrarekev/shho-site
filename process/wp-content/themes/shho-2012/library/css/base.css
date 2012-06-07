@@ -98,6 +98,11 @@ html {
 body {
   margin: 0;
 	background-color: #d9dadc;
+	
+	webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+		-webkit-text-size-adjust: 100%;		 
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
 }
 /* 
  * Addresses font-family inconsistency between 'textarea' and other form elements.
@@ -429,10 +434,8 @@ dd {
 }
 /* proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens) */
 p {
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -epub-hyphens: auto;
-  hyphens: auto;
+	letter-spacing: 0;
+	font-family: "Times Regular", Times, serif;
 }
 b,
 strong,
@@ -566,11 +569,47 @@ TYPOGRAPHY
 
 @font-face {
     font-family: 'Times Semibold Italic';
-    src: url('../fonts/../fonts/timesltstd-semibolditalic-webfont.eot');
-    src: url('../fonts/../fonts/timesltstd-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/../fonts/timesltstd-semibolditalic-webfont.woff') format('woff'),
-         url('../fonts/../fonts/timesltstd-semibolditalic-webfont.ttf') format('truetype'),
-         url('../fonts/../fonts/timesltstd-semibolditalic-webfont.svg#TimesLTStdSemiboldItalic') format('svg');
+    src: url('../fonts/timesltstd-semibolditalic-webfont.eot');
+    src: url('../fonts/timesltstd-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/timesltstd-semibolditalic-webfont.woff') format('woff'),
+         url('../fonts/timesltstd-semibolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/timesltstd-semibolditalic-webfont.svg#TimesLTStdSemiboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*Clarendon Light */
+@font-face {
+    font-family: 'Clarendon Light';
+    src: url('../fonts/clarendonltstd-light-webfont.eot');
+    src: url('../fonts/clarendonltstd-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clarendonltstd-light-webfont.woff') format('woff'),
+         url('../fonts/clarendonltstd-light-webfont.ttf') format('truetype'),
+         url('../fonts/clarendonltstd-light-webfont.svg#ClarendonLTStdLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*Clarendon Roman */
+@font-face {
+    font-family: 'Clarendon Roman';
+    src: url('../fonts/clarendonltstd-webfont.eot');
+    src: url('../fonts/clarendonltstd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clarendonltstd-webfont.woff') format('woff'),
+         url('../fonts/clarendonltstd-webfont.ttf') format('truetype'),
+         url('../fonts/clarendonltstd-webfont.svg#ClarendonLTStdRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* Clarendon BOLD*/
+@font-face {
+    font-family: 'Clarendon Bold';
+    src: url('../fonts/clarendonltstd-bold-webfont.eot');
+    src: url('../fonts/clarendonltstd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clarendonltstd-bold-webfont.woff') format('woff'),
+         url('../fonts/clarendonltstd-bold-webfont.ttf') format('truetype'),
+         url('../fonts/clarendonltstd-bold-webfont.svg#ClarendonLTStdBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -704,7 +743,7 @@ NAVIGATION STYLES
 
 header nav ul li{
   float: left;
-  margin-left: 15px;
+	margin-left: 15px;
 }
 
 header nav ul li a {
@@ -712,7 +751,237 @@ header nav ul li a {
   text-transform: capitalize;
   text-decoration: none;
 	font: 12px "Times Semibold";
+	display: inline-block;
 }
+
+.slash{
+	padding-left: 10px;
+}
+
+#menu-item-4808 a span.slash {
+	display: none;
+}
+
+/*header nav ul li:before{
+	content: "/";
+}*/
+
+
+ fullscreen video 
+
+#main-wrap{
+
+position:relative;
+background:#fff;
+z-index:10;
+left:0px;
+margin-top: 1200px;
+width:100%;
+	padding-bottom: 0;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+#supersized {  display:block; position:absolute; left:0; overflow:hidden; z-index:-999; height:100%; width:100%;
+	top: 0;
+	float: none;
+	margin-top: 0;
+}
+
+#supersized img { width:auto; height:auto; position:relative; display:none; outline:none; border:none; }
+#supersized.speed img { -ms-interpolation-mode:nearest-neighbor; image-rendering: -moz-crisp-edges; }	/*Speed*/
+#supersized.quality img { -ms-interpolation-mode:bicubic; image-rendering: optimizeQuality; }			/*Quality*/
+
+#supersized li { display:block; list-style:none; z-index:-30; position:absolute; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; }
+#supersized a { width:100%; height:100%; display:block; }
+#supersized li.prevslide { z-index:-20; }
+#supersized li.activeslide { z-index:-10; }
+#supersized li.image-loading { 	background:url(../images/loading.gif) center center no-repeat #eaedee !important; }
+#supersized li.image-loading img{ visibility:hidden; }
+#supersized li.prevslide img, #supersized li.activeslide img{ display:inline; }
+	
+	
+#slidecaption{
+
+position:fixed;
+bottom:-500px;
+width:240px;
+left:50%;
+margin-left:230px;
+font-size:12px;
+padding:20px;
+background:#1e1e1e;
+
+
+}
+
+#slidecaption h3{
+
+
+color:#fff;
+font-weight:400;
+line-height:21px;
+margin-bottom:14px;
+text-transform:uppercase;
+font-size:10px;
+letter-spacing:0.05em;
+font-weight:700;
+margin-bottom:20px;
+
+}
+
+#slidecaption p{
+
+
+color:#fff;
+margin-bottom:10px;
+
+
+}
+
+#down_arrow{
+
+margin-bottom:10px;
+
+font-size:12px;
+font-style:italic;
+font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+border:none;
+background:none;
+display:block;
+cursor:pointer;
+
+
+}
+
+#slide-list{
+
+position:fixed;
+bottom:10px;
+display:block;
+overflow:hidden;
+margin:0;
+left:10px;
+
+}
+
+#slide-list li{
+
+width:13px;
+height:13px;
+margin:0 0px 0 0;
+background:url(../images/arrows.png) no-repeat 0 -63px;
+display:inline-block;
+cursor:pointer;
+text-indent:-9999px;
+
+
+
+}
+
+#slide-list li.current-slide{
+
+background:url(../images/arrows.png) no-repeat 0 0px;
+
+}
+
+
+#left_arrow{
+
+width:50px;
+height:40px;
+background:#fff url(../images/arrows.png) no-repeat 0 -126px;
+position:absolute;
+left:0px;
+top:50%;
+margin-top:-20px;
+cursor:pointer;
+z-index:101;
+
+
+
+}
+
+
+#right_arrow{
+
+width:50px;
+height:40px;
+background:#fff url(../images/arrows.png) no-repeat 0 -216px;
+position:absolute;
+right:0px;
+top:50%;
+margin-top:-20px;
+cursor:pointer;
+z-index:101;
+
+
+}
+
+
+
+
+#toc {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: #000;
+  width: 410px;
+  height: 480px;
+  z-index: 999999;
+  display: none;
+  padding: 25px 50px 50px 50px;
+  margin: -250px 0 0 -250px;
+  opacity: .9;
+	color: #fff;
+	text-align: center;
+}
+
+
+  #toc h1,
+  #toc h2,
+  #toc li
+  { text-align: center; color: #fff;}
+  
+  #toc p {
+    color: #ccc;
+    padding: 0 0 15px 0;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: left;
+
+	
+}
+  
+      #toc li a
+      {
+        color: #ccc;
+        border-bottom: 1px dashed #ccc;
+	text-decoration: none;
+}
+      
+      #toc p a:hover {
+        border: 0;
+        color: #999;
+      }
+  
+  #toc img
+  { letter-spacing: 4px;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	cursor: pointer;
+}
+  
+  #toc h2
+  { padding: 0 0 0 0; color: #fff;
+	font: 16px "Clarendon Light";
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+  
+  
 /*********************
 POSTS & CONTENT STYLES
 *********************/

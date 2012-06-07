@@ -154,6 +154,7 @@ function bones_main_nav() {
     		'menu' => 'main_nav', /* menu name */
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container_class' => 'menu clearfix', /* container class */
+            'link_after'      => '<span class="slash">/</span>',
     		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
 			'walker' => $walker /* customizes the output of the menu */
     	));

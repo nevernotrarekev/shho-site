@@ -23,10 +23,90 @@ Modernizr.load([
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
 	
-	// add all your scripts here
+
+	//preload images
+	if(!$.browser.msie) $(window).preloader();
 	
- 
+	// Global vars
+	var $artHeaderInner = $('.wordmark');
+	var windowScroll;
+	
+	// Identify if visitor has a large enough viewport for parallaxing title
+	function isLargeViewport() {
+	if($nav.css('position') == "relative") {
+	  return false;
+	} else {
+	  return true;
+	}
+
+	}
+	
+  // Functional parallaxing calculations
+  function slidingTitle() {
+    //Get scroll position of window
+    windowScroll = $(this).scrollTop();
+
+    //Slow scroll of .art-header-inner scroll and fade it out
+    $artHeaderInner.css({
+      'margin-top' : -(windowScroll/3)+ 100 +"px",
+      'opacity' : 1-(windowScroll/100)
+    });
+
+  }
+  
+    $(window).scroll(function() {
+        slidingTitle();
+    });
+
+	
+	//change margin top of main wrap
+	$(window).resize(function() {
+	
+		$('#main-wrap').css({marginTop:$(window).height()});
+		
+	}).trigger('resize');
+
+	/* Navigation Items
+		----------------------------*/
+		$('#left_arrow').click(function(e) {
+					
+			api.prevSlide();
+			
+	    });
+		
+		
+	    $('#right_arrow').click(function(e) {
+			
+			api.nextSlide();
+					
+	    });
+	    
+	$('#supersized li.activeslide img').css({opacity:0}).animate({opacity:1},400);
+	
+	jQuery('#toc-toggle').click(function(e) {
+		$('#toc').fadeToggle(500);
+	
+	 });
+	 
+	 jQuery('#toc img').click(function(e){
+		event.preventDefault();
+	 	$('#toc').fadeOut(500);
+	 });
+	 
+	 var my_div = $("#main-wrap");
+   	 var div_top = my_div.offset().top;
+
+	$(window).scroll(function(){
+		fromTop = $(window).scrollTop();
+		        $(document).scroll(function() {
+        		event.preventDefault();
+           	 	$('#toc').fadeOut(500);
+
+        });
+        });
+
 }); /* end of as page load scripts */
+
 
 
 // HTML5 Fallbacks for older browsers

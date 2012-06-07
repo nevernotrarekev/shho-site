@@ -38,6 +38,23 @@ z-index:-5;
 
 }
 
+/* @group Tweet */
+
+.tweet_text{
+	font-family: "Times Bold Italic";
+	color: #70c8d3;
+	float: left;
+	margin-left: 50px;
+}
+
+a.tweet_avatar{
+		border: none;
+	text-decoration: none;
+
+}
+
+/* @end */
+
 .cover#title-page {
 	margin-top: 0px; display: block; overflow-x: hidden; overflow-y: hidden; z-index: 1000;
 	width: 100%;
@@ -400,15 +417,24 @@ you can add resource intensive styles.
   HEADER SYTLES
   *********************/
 
-header{
-  width: 1140px;
-  margin: 0 auto;
-  margin-top: 55px;
-  margin-bottom: 25px;
+#header{
+
+position:absolute;
+
+z-index:11;
+
+top: 50px;
+width:100%;
+
+
+z-index:101;
+
 }
 
-header #logo{
+#header #logo{
 }
+
+
 
 #logo{
 	width: 32px;
@@ -417,16 +443,93 @@ header #logo{
 }
 
 header nav {
-	float: right;
 	margin: 0 20px 0 0;
+	float: right;
 }
-  
-.twitter{
-	font-family: "Times Bold Italic";
-	color: #70c8d3;
+
+
+#search{
+	float: right;
+}
+
+input#s1 {
+	
+		font-family: "Times Semibold Italic", Times, serif;
+
+height: 15px;
+width: 150px;
+outline: none;
+border: 0;
+padding-left: 13px;
+border: 1px solid #fff;
+/* 		border: 1px solid #307525;/*Happy 420*/ */
+margin-right: 13px;
+	background-color: transparent;
+	color: #fff;
+	font-size: 11px;
+}
+
+input.searchButton {
+
+	background-color: #fff;
+	outline: none;
+border: 0;
+	font: 12px "Times Semibold Italic", Times, serif;
+}
+
+
+/* @group Tweet */
+
+.tweet, .query {
+  font-family: "HelveticaNeue", sans-serif;
+	display: inline;
 	float: left;
-	margin-left: 50px;
-}  
+	margin-right: 14px;
+}
+  .tweet .tweet_list, .query .tweet_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+    .tweet .tweet_list .awesome, .tweet .tweet_list .epic, .query .tweet_list .awesome, .query .tweet_list .epic {
+      text-transform: uppercase; }
+    .tweet .tweet_list li, .query .tweet_list li {
+     }
+      .tweet .tweet_list li a, .query .tweet_list li a {
+	white-space: normal;
+}
+    .tweet .tweet_list .tweet_even, .query .tweet_list .tweet_even {
+      }
+    .tweet .tweet_list .tweet_avatar, .query .tweet_list .tweet_avatar {
+      padding-right: .5em;
+      float: left; }
+      .tweet .tweet_list .tweet_avatar img, .query .tweet_list .tweet_avatar img {
+        vertical-align: middle; }
+
+/* @end */  
+
+.wordmark{
+	  position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 230px 0 0 -180px !important;
+    width: 321px;
+    height: 81px;
+    padding: 0;
+	z-index: 88;
+}
+
+a#toc-toggle {
+	display: inline-block;
+	text-align: center;
+	width: 305px;
+	font-family: "Times Semibold Italic";
+	color: white;
+	letter-spacing: 0;
+	border-bottom: ;
+}
+
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -480,7 +583,9 @@ header nav {
               border-bottom: 1px solid #ccc; }
             .menu ul li ul.sub-menu li:last-child a,
             .menu ul li ul.children li:last-child a {
-              border-bottom: 0; }
+              border-bottom: 0;
+             
+               }
         .menu ul li:hover ul {
           top: auto;
           display: block; }

@@ -200,7 +200,7 @@
           });
         }
         
-         // Pause on scroll     
+         /*Pause on scroll     
         
         var my_div = $("#featured");
 	    var div_top = my_div.offset().top;
@@ -218,6 +218,8 @@
           };
         }
         
+       
+        
         $(window).scroll(function(){
 		fromTop = $(window).scrollTop();
 		        $(document).scroll(function() {
@@ -227,7 +229,7 @@
             else {
             $start.crossSlideResume();}
         });
-
+*/
 
 
         // Pager click event handler
