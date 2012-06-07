@@ -44,7 +44,9 @@ z-index:-5;
 	font-family: "Times Bold Italic";
 	color: #70c8d3;
 	float: left;
-	margin-left: 50px;
+	display: inline-block;
+	text-align: center;
+	width: 305px;
 }
 
 a.tweet_avatar{
@@ -520,13 +522,14 @@ border: 0;
 }
 
 a#toc-toggle {
-	display: inline-block;
-	text-align: center;
-	width: 305px;
+	
 	font-family: "Times Semibold Italic";
 	color: white;
 	letter-spacing: 0;
-	border-bottom: ;
+	/*border-bottom: 1px solid #fff;*/
+	margin-left: 50px;
+	text-decoration: none;
+	padding-bottom: 3px;
 }
 
 

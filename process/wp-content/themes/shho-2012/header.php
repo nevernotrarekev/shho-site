@@ -34,7 +34,9 @@
 				<div id="inner-header" class="wrap">
 				
 					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow" title="home"><img src="<?php bloginfo('template_url')?>/library/images/symbol_white.png"></a>
-					<div class="tweet"></div>
+
+					<span><a href="#" id="toc-toggle">Higher Learning</a></span>
+
 					<!--Search-->
 					<form method="get" id="search" action="<?php bloginfo('home'); ?>/">
 					<span>
@@ -55,7 +57,8 @@
 			
 			<div class="wordmark">
 				<img src="<?php bloginfo('template_url')?>/library/images/wordmark.png" alt="SHHO Wordmark" width="321" height="81">
-				<span><a href="#" id="toc-toggle">Higher Learning</a></span>
+				<span><div class="tweet"></div></span>
+
 				
 				<div id="toc">
 					<h2>About</h2>
@@ -65,6 +68,7 @@
 				     	<p>
 						The organization has selectively worked with the best up-and-coming artists, hip-hop legends, like-minded companies, and passionate student talents- all who have established SHHO as an organic uncompromising brand.</p>
 
+         				
          				<img src="<?php bloginfo('template_url')?>/library/images/2006-forever.png" alt="2006-Forever" width="50" height="49">
 
 				
