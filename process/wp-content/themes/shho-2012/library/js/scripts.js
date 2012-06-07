@@ -95,15 +95,27 @@ jQuery(document).ready(function($) {
 	 
 	 var my_div = $("#main-wrap");
    	 var div_top = my_div.offset().top;
-
+	var el = '#supersized',
+	base = this;
 	$(window).scroll(function(){
 		fromTop = $(window).scrollTop();
 		        $(document).scroll(function() {
         		event.preventDefault();
-           	 	$('#toc').fadeOut(500);
+        		
+        		           	 	$('#toc').fadeOut(500);
+
+
+            if (div_top < $(window).scrollTop()) {
+				clearInterval(vars.slideshow_interval);	// Stop slideshow, prevent buildup
+				$.supersized.playToggle();
+            }
+            else {
+				$.supersized.playToggle();
+			}
 
         });
-        });
+    });
+    
 
 }); /* end of as page load scripts */
 
